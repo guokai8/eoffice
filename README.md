@@ -25,6 +25,7 @@ p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
 topptx(p, filename = "mtcars.pptx")
 ## write out table to office
 toTable(head(mtcars), filename = "mtcars.docx")
+## append was supported if you want add figures or tables.
 ```
 ## Note
 The _eoffice_ just a package for funs. 
