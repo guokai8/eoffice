@@ -6,8 +6,8 @@ Author: Kai Guo
 Maintainer: Kai Guo <guokai8@gmail.com>
 Description: Export or import graph and tables to MicroSoft office
 License: GPL-2
-Depends: officer, rvg, flextable
-Imports: officer, rvg, flextable
+Depends: officer, rvg, flextable, dplyr, grDevices, magrittr, utils
+Imports: officer, rvg, flextable, dplyr, grDevices, magrittr, utils 
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
