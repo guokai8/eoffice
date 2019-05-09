@@ -28,7 +28,7 @@ toTable(head(mtcars), filename = "mtcars.docx")
 ## append was supported if you want add figures or tables.
 ```
 ## Note
-The _eoffice_ just a package for funs. 
+The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include all fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. Also there is a wonderful package already there called _export_. Comparing with that package, _eoffice_ include own features which I think really helpful to me.   
 
 ## Contact information
 
