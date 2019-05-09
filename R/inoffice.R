@@ -36,8 +36,6 @@ inoffice <- function(filename, format = NULL, header = TRUE){
                        content$content_type,
                        function(x) length(unique(x)))
     }
-    cat("Here are the details in the ",filename,":\n")
-    print(tent)
     table_cells <- subset(content, content_type %in% "table cell")
     if(format == "ppt"){
         len <- length(unique(table_cells$slide_id))
@@ -55,6 +53,7 @@ inoffice <- function(filename, format = NULL, header = TRUE){
         }
         names(res) <- paste("slide",1:len,sep="")
         res <- unlist(res, recursive = FALSE)
+        tent["table cell"] <- length(res)
         }
     if(format == "doc"){
         len <- length(unique(table_cells$doc_index))
@@ -74,6 +73,8 @@ inoffice <- function(filename, format = NULL, header = TRUE){
     if(isTRUE(header)){
         res <- lapply(res, function(x).setcolnames(x))
     }
+    cat("Here are the details in the ",filename,":\n")
+    print(tent)
     return(res)
     }
 
