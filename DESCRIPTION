@@ -1,11 +1,12 @@
 Package: eoffice
 Type: Package
 Title: Export graph and tables to MicroSoft office
-Version: 0.1.1
+Version: 0.1.2
 Author: Kai Guo 
 Maintainer: Kai Guo <guokai8@gmail.com>
-Description: Export graph and tables to MS office
+Description: Export graph and tables to MicroSoft office
 License: GPL-2
+Depends: officer, rvg, flextable
 Imports: officer, rvg, flextable
 Encoding: UTF-8
 LazyData: true
