@@ -1,5 +1,5 @@
 # eoffice
-Export and import graph and tables to MicroSoft office
+Export and import graphics and tables to MicroSoft office
 ## Description
 _eoffice_ provide wrap functions to export and import graphics and data.frames in R to MicroSoft office (docx, pptx format)
 
@@ -29,7 +29,7 @@ toTable(head(mtcars), filename = "mtcars.docx")
 tabs <- inpptx(filename = "file_with_table.pptx", header = TRUE)
 ```
 ## Note
-The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include all fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. Also there are some packages support these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx.
+The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include all fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. Also there are some packages support these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
 
 ## Contact information
 
