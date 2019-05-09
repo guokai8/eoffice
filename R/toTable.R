@@ -18,7 +18,7 @@
 ##' @param filename output filename
 ##' @author Kai Guo
 ##' @export
-toTable <- function(data, filename, format = NULL){
+toTable <- function(data, filename, format = NULL, append = FALSE){
     if(is.null(format)){
         format = .getext(filename)
     }
@@ -37,12 +37,32 @@ toTable <- function(data, filename, format = NULL){
         empty_blanks() %>%
         autofit()
     if(format == "ppt"){
-        doc <- read_pptx()
+        if(isTRUE(append)){
+            if(file.exists(filename)){
+                doc <- read_pptx(filename)
+            }else{
+                doc <- read_pptx()
+                doc <- add_slide(doc,"Title and Content", "Office Theme")
+                print(doc,target=filename)
+            }
+        }else{
+            doc <- read_pptx()
+        }
         doc <- add_slide(doc, "Title and Content", "Office Theme")
         doc <- ph_with_flextable(doc, ft)
         print(doc,target=filename)
     }
     if(format == "doc"){
+        if(isTRUE(append)){
+            if(file.exists(filename)){
+                doc <- read_docx(filename)
+            }else{
+                doc <- read_docx()
+                print(doc,target=filename)
+            }
+        }else{
+            doc <- read_docx()
+        }
         doc <- read_docx()
         doc <- body_add_flextable(doc, ft)
         print(doc,target=filename)

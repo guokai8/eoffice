@@ -11,9 +11,10 @@
 ##' @param figure figure function
 ##' @param format file type
 ##' @param filename output filename
+##' @param append append into file
 ##' @author Kai Guo
 ##' @export
-toffice <- function(figure = NULL, plot = NULL, format = "pptx", filename= "temp.pptx"){
+toffice <- function(figure = NULL, plot = NULL, format = "pptx", filename= "temp.pptx", append = FALSE){
     format = tolower(format)
     if (format == "ppt" | format == "pptx") {
         format = "ppt"
@@ -32,14 +33,34 @@ toffice <- function(figure = NULL, plot = NULL, format = "pptx", filename= "temp
             p <- figure
         }
     }
+
     if(format == "ppt"){
-        doc <- read_pptx()
+        if(isTRUE(append)){
+            if(file.exists(filename)){
+                doc <- read_pptx(filename)
+            }else{
+                doc <- read_pptx()
+                doc <- add_slide(doc,"Title and Content", "Office Theme")
+                print(doc,target=filename)
+            }
+        }else{
+            doc <- read_pptx()
+        }
         doc <- add_slide(doc,"Title and Content", "Office Theme")
         doc <- ph_with_vg(doc, print(p))
         print(doc,target=filename)
     }
     if(format == "doc"){
-        doc <- read_docx()
+        if(isTRUE(append)){
+            if(file.exists(filename)){
+                doc <- read_docx(filename)
+            }else{
+                doc <- read_docx()
+                print(doc,target=filename)
+            }
+        }else{
+            doc <- read_docx()
+        }
         doc <- body_add_vg(doc, print(p))
         print(doc,target=filename)
     }
@@ -51,8 +72,8 @@ toffice <- function(figure = NULL, plot = NULL, format = "pptx", filename= "temp
 ##' @param filename output filename
 ##' @author Kai Guo
 ##' @export
-topptx <- function(figure = NULL, filename = NULL){
-    toffice(figure = figure, filename = filename, format = "pptx" )
+topptx <- function(figure = NULL, filename = NULL, append = FALSE){
+    toffice(figure = figure, filename = filename, format = "pptx", append = append)
 }
 ##' export figure to docx
 ##' @name todocx
@@ -60,7 +81,7 @@ topptx <- function(figure = NULL, filename = NULL){
 ##' @param filename output filename
 ##' @author Kai Guo
 ##' @export
-todocx <- function(figure =NULL, filename = NULL){
-    toffice(figure = figure, filename = filename, format = "docx" )
+todocx <- function(figure =NULL, filename = NULL, append = FALSE){
+    toffice(figure = figure, filename = filename, format = "docx", append = append)
 }
 
