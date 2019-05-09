@@ -4,7 +4,7 @@
 \alias{topptx}
 \title{export figure to pptx}
 \usage{
-topptx(figure = NULL, filename = NULL)
+topptx(figure = NULL, filename = NULL, append = FALSE)
 }
 \arguments{
 \item{figure}{figure function}

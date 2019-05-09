@@ -4,7 +4,7 @@
 \alias{todocx}
 \title{export figure to docx}
 \usage{
-todocx(figure = NULL, filename = NULL)
+todocx(figure = NULL, filename = NULL, append = FALSE)
 }
 \arguments{
 \item{figure}{figure function}

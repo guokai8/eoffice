@@ -4,7 +4,7 @@
 \alias{toTable}
 \title{write table out to pptx or docx}
 \usage{
-toTable(data, filename, format = NULL)
+toTable(data, filename, format = NULL, append = FALSE)
 }
 \arguments{
 \item{data}{datasets}
