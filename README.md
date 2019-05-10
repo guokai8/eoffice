@@ -23,7 +23,7 @@ topptx(filename = "mtcars.pptx")
 p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
 topptx(p, filename = "mtcars.pptx")
 ## write out table to office
-toTable(head(mtcars), filename = "mtcars.docx")
+totable(head(mtcars), filename = "mtcars.docx")
 ## append was supported if you want add figures or tables.
 ## inpptx and indocx provide function read the tables in pptx or docx
 tabs <- inpptx(filename = "file_with_table.pptx", header = TRUE)
