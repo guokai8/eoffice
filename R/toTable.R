@@ -18,7 +18,7 @@
 ##' @param filename output filename
 ##' @author Kai Guo
 ##' @export
-toTable <- function(data, filename, format = NULL, append = FALSE){
+totable <- function(data, filename, format = NULL, append = FALSE){
     if(is.null(format)){
         format = .getext(filename)
     }
