@@ -22,6 +22,7 @@ topptx(filename = "mtcars.pptx")
 ## or todocx(filename = "mtcars.docx")
 p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
 topptx(p, filename = "mtcars.pptx")
+## use above method if you want use topptx with ggplot function in a loop
 ## write out table to office
 totable(head(mtcars), filename = "mtcars.docx")
 totable(head(mtcars), filename = "mtcars.pptx")
