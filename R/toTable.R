@@ -13,6 +13,7 @@
 ##' @importFrom officer read_pptx
 ##' @importFrom officer read_docx
 ##' @importFrom flextable empty_blanks
+##' @importFrom broom tidy
 ##' @importFrom magrittr %>%
 ##' @param data datasets
 ##' @param filename output filename
@@ -28,6 +29,14 @@ totable <- function(data, filename, format = NULL, append = FALSE){
     }
     if (format == "doc" | format == "docx") {
         format = "doc"
+    }
+    typecl <- c("matrix","data.frame","tbl_df","tbl")
+    if(length(intersect(class(data),typecl))==0){
+        data = tidy(data)
+    }else{
+        if(class(data)=="matrix"){
+            data = as.data.frame(data)
+        }
     }
     ft <- flextable(data = data) %>%
         theme_booktabs() %>% bold(part = "header") %>%
