@@ -27,6 +27,9 @@ topptx(p, filename = "mtcars.pptx")
 totable(head(mtcars), filename = "mtcars.docx")
 totable(head(mtcars), filename = "mtcars.pptx")
 ## append was supported if you want add figures or tables.
+## Now support direct output of common objects produced by R statistical functions
+tt <- t.test(wt ~ am, mtcars),
+totable(t.test(tt), filename = "mtcars_test.pptx")
 ## inpptx and indocx provide function read the tables in pptx or docx
 tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 ```
