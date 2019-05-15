@@ -1,7 +1,7 @@
 Package: eoffice
 Type: Package
 Title: Export or import graph and tables to MicroSoft office
-Version: 0.1.2
+Version: 0.1.3
 Author: Kai Guo 
 Maintainer: Kai Guo <guokai8@gmail.com>
 Description: Export or import graph and tables to MicroSoft office
