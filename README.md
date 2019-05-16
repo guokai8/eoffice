@@ -34,7 +34,7 @@ totable(t.test(tt), filename = "mtcars_test.pptx")
 tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 ```
 ## Note
-The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include all fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
+The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include lots of fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
 
 ## Contact information
 
