@@ -10,6 +10,10 @@ totable(data, filename, format = NULL, append = FALSE)
 \item{data}{datasets}
 
 \item{filename}{output filename}
+
+\item{format}{pptx or docx}
+
+\item{append}{append into file}
 }
 \description{
 write table out to pptx or docx
