@@ -17,6 +17,8 @@
 ##' @importFrom magrittr %>%
 ##' @param data datasets
 ##' @param filename output filename
+##' @param format pptx or docx
+##' @param append append into file
 ##' @author Kai Guo
 ##' @export
 totable <- function(data, filename, format = NULL, append = FALSE){
