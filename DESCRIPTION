@@ -1,6 +1,6 @@
 Package: eoffice
 Type: Package
-Title: Export or import graph and tables to MicroSoft office
+Title: Export or Import Graph and Tables to MicroSoft Office
 Version: 0.1.5
 Author: Kai Guo 
 Maintainer: Kai Guo <guokai8@gmail.com>
@@ -15,4 +15,6 @@ Imports: officer, rvg, flextable, broom, dplyr, magrittr, ggplotify, R.devices, 
 Depends: 
 Encoding: UTF-8
 LazyData: true
+Suggests: knitr, rmarkdown, ggplot2
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1
