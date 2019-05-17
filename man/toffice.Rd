@@ -5,7 +5,7 @@
 \title{export graph to MS office}
 \usage{
 toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
-  append = FALSE)
+  append = FALSE, width = 4, height = 4)
 }
 \arguments{
 \item{figure}{figure function}
@@ -15,6 +15,10 @@ toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
 \item{filename}{output filename}
 
 \item{append}{append into file}
+
+\item{width}{width of the output figure}
+
+\item{height}{height of the output figure}
 }
 \description{
 export graph to MS office
