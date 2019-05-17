@@ -15,6 +15,13 @@ ggplot object
 \description{
 convert basic plot to ggplot object
 }
+\examples{
+\dontrun{
+p <- convertplot(plot(1:10))
+class(p)
+print(p)
+}
+}
 \author{
 Kai Guo
 }

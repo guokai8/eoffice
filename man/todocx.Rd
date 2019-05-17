@@ -21,6 +21,15 @@ todocx(figure = NULL, filename = NULL, width = 6, height = 6,
 \description{
 export figure to docx
 }
+\examples{
+\dontrun{
+plot(mtcars$mpg, mtcars$disp)
+todocx(filename = "mtcars.docx")
+## You can also use ggplot
+ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+todocx(filename = "mtcars.docx", height = 6, width = 4)
+}
+}
 \author{
 Kai Guo
 }

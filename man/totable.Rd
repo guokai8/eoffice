@@ -18,6 +18,14 @@ totable(data, filename, format = NULL, append = FALSE)
 \description{
 write table out to pptx or docx
 }
+\examples{
+\dontrun{
+tt <- t.test(wt ~ am, mtcars)
+totable(tt, filename = "mtcars_test.pptx")
+totable(t.test(wt ~ am, mtcars), filename = "mtcars_test.pptx")
+totable(head(mtcars), filename = "mtcars_head.docx")
+}
+}
 \author{
 Kai Guo
 }

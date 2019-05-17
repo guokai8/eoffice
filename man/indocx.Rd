@@ -14,6 +14,13 @@ indocx(filename, header = FALSE)
 \description{
 read table from docx
 }
+\examples{
+\dontrun{
+totable(t.test(wt ~ am, mtcars), filename = "mtcars.docx")
+tabs <- indocx(filename = "mtcars.docx", header = TRUE)
+tabs
+}
+}
 \author{
 Kai Guo
 }

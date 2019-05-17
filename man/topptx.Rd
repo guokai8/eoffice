@@ -21,6 +21,15 @@ topptx(figure = NULL, filename = NULL, width = 6, height = 6,
 \description{
 export figure to pptx
 }
+\examples{
+\dontrun{
+plot(mtcars$mpg, mtcars$disp)
+topptx(filename = "mtcars.pptx")
+## You can also use ggplot
+ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+topptx(filename = "mtcars.pptx")
+}
+}
 \author{
 Kai Guo
 }

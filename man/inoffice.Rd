@@ -16,6 +16,13 @@ inoffice(filename, format = NULL, header = TRUE)
 \description{
 read tables from ppt and word
 }
+\examples{
+\dontrun{
+totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
+tabs <- inoffice(filename = "mtcars.pptx", header = TRUE)
+tabs
+}
+}
 \author{
 Kai Guo
 }

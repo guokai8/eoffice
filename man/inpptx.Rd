@@ -14,6 +14,13 @@ inpptx(filename, header = FALSE)
 \description{
 read table from pptx
 }
+\examples{
+\dontrun{
+totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
+tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
+tabs
+}
+}
 \author{
 Kai Guo
 }
