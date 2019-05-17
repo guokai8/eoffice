@@ -4,8 +4,8 @@
 \alias{toffice}
 \title{export graph to MS office}
 \usage{
-toffice(figure = NULL, plot = NULL, format = "pptx",
-  filename = "temp.pptx", append = FALSE)
+toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
+  append = FALSE)
 }
 \arguments{
 \item{figure}{figure function}
