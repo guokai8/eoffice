@@ -11,7 +11,7 @@ Description: eoffice provide wrap functions to export and import graphics and
              without GUI support, eoffice also provide function to easily write out figures
              to all above formats, pptx and docx.
 License: GPL-2
-Imports: officer, rvg, flextable, broom, dplyr, magrittr, grid, ggplotify, R.devices, devEMF
+Imports: officer, rvg, flextable, broom, dplyr, magrittr, ggplotify, R.devices, devEMF
 Depends: 
 Encoding: UTF-8
 LazyData: true
