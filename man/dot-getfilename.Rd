@@ -6,6 +6,9 @@
 \usage{
 .getfilename(x)
 }
+\arguments{
+\item{x}{filename}
+}
 \description{
 get the prefix name
 }

@@ -6,6 +6,9 @@
 \usage{
 .getext(x)
 }
+\arguments{
+\item{x}{filename}
+}
 \description{
 get the suffix name
 }

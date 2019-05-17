@@ -7,7 +7,7 @@
 convertplot(exp)
 }
 \arguments{
-\item{expr}{expression formula of basic plot}
+\item{exp}{expression formula of basic plot}
 }
 \value{
 ggplot object

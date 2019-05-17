@@ -9,7 +9,9 @@ tofigure(figure, format = NULL, filename = "temp.pdf")
 \arguments{
 \item{figure}{output figure function, set NULL output the current figure}
 
-\item{type}{output format}
+\item{format}{output format (could be ingored)}
+
+\item{filename}{output filename}
 }
 \description{
 output figures to different formats
