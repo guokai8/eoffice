@@ -36,7 +36,8 @@ tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 ## output different figure formats
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.pdf")
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.eps")
-## if you use basic plot function or other plot function you need first use convertplot to convert it to ggplot object
+## if you use basic plot function or other plot function you need first use convertplot to convert 
+## it to ggplot object
 p <- convertplot(plot(1:10))
 tofigure(p, filename = "test.pdf")
 topptx(p, filename = "test.pptx")
