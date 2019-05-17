@@ -14,7 +14,7 @@
 ##' @param append append into file
 ##' @author Kai Guo
 ##' @export
-toffice <- function(figure = NULL, plot = NULL, format = "pptx", filename= "temp.pptx", append = FALSE){
+toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx", append = FALSE){
     format = tolower(format)
     if (format == "ppt" | format == "pptx") {
         format = "ppt"
