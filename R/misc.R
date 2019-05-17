@@ -30,6 +30,12 @@
 ##' @importFrom stats formula
 ##' @param exp expression formula of basic plot
 ##' @return ggplot object
+##' @examples
+##' \dontrun{
+##' p <- convertplot(plot(1:10))
+##' class(p)
+##' print(p)
+##' }
 ##' @author Kai Guo
 ##' @export
 convertplot <- function(exp){

@@ -8,6 +8,12 @@
 ##' @param filename input filename
 ##' @param format pptx or docx
 ##' @param header use first row as column name
+##' @examples
+##' \dontrun{
+##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
+##' tabs <- inoffice(filename = "mtcars.pptx", header = TRUE)
+##' tabs
+##' }
 ##' @export
 ##' @author Kai Guo
 inoffice <- function(filename, format = NULL, header = TRUE){
@@ -82,6 +88,12 @@ inoffice <- function(filename, format = NULL, header = TRUE){
 ##' @name inpptx
 ##' @param filename input filename
 ##' @param header use first row as column name
+##' @examples
+##' \dontrun{
+##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
+##' tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
+##' tabs
+##' }
 ##' @author Kai Guo
 ##' @export
 inpptx <- function(filename, header = FALSE){
@@ -93,6 +105,12 @@ inpptx <- function(filename, header = FALSE){
 ##' @name indocx
 ##' @param filename input filename
 ##' @param header use first row as column name
+##' @examples
+##' \dontrun{
+##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.docx")
+##' tabs <- indocx(filename = "mtcars.docx", header = TRUE)
+##' tabs
+##' }
 ##' @author Kai Guo
 ##' @export
 indocx <- function(filename, header = FALSE){

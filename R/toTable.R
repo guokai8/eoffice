@@ -19,6 +19,13 @@
 ##' @param filename output filename
 ##' @param format pptx or docx
 ##' @param append append into file
+##' @examples
+##' \dontrun{
+##' tt <- t.test(wt ~ am, mtcars)
+##' totable(tt, filename = "mtcars_test.pptx")
+##' totable(t.test(wt ~ am, mtcars), filename = "mtcars_test.pptx")
+##' totable(head(mtcars), filename = "mtcars_head.docx")
+##' }
 ##' @author Kai Guo
 ##' @export
 totable <- function(data, filename, format = NULL, append = FALSE){

@@ -6,7 +6,21 @@
 ##' @importFrom grDevices recordPlot
 ##' @param figure output figure function, set NULL output the current figure
 ##' @param format output format (could be ingored)
-##' @param filename output filename
+##' @param filename output filename with different format as suffix
+##' @examples
+##' \dontrun{
+##' p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+##' tofigure(p,filename = "mtcars.pdf")
+##' ## or use ggplot directly
+##' tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) +
+##' geom_point(), filename = "mtcars.eps")
+##' ## if you use basic plot function or other plot function you
+##' ## need first use convertplot to convert it to ggplot object
+##' ## when you are working on the platform without GUI
+##' p <- convertplot(plot(1:10))
+##' tofigure(p, filename = "test.pdf")
+##' topptx(p, filename = "test.pptx")
+##' }
 ##' @author Kai Guo
 ##' @export
 tofigure <- function(figure, format = NULL, filename= "temp.pdf"){

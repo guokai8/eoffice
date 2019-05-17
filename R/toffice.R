@@ -76,6 +76,14 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param append append or not
+##' @examples
+##' \dontrun{
+##' plot(mtcars$mpg, mtcars$disp)
+##' topptx(filename = "mtcars.pptx")
+##' ## You can also use ggplot
+##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+##' topptx(filename = "mtcars.pptx")
+##' }
 ##' @author Kai Guo
 ##' @export
 topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append = FALSE){
@@ -89,6 +97,14 @@ topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param append append or not
+##' @examples
+##' \dontrun{
+##' plot(mtcars$mpg, mtcars$disp)
+##' todocx(filename = "mtcars.docx")
+##' ## You can also use ggplot
+##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+##' todocx(filename = "mtcars.docx", height = 6, width = 4)
+##' }
 ##' @author Kai Guo
 ##' @export
 todocx <- function(figure =NULL, filename = NULL, width = 6, height = 6, append = FALSE){
