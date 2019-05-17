@@ -38,7 +38,7 @@ tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.pdf")
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.eps")
 ## if you use basic plot function or other plot function you need first use convertplot to convert 
-## it to ggplot object
+## it to ggplot object when you are working on the platform without GUI
 p <- convertplot(plot(1:10))
 tofigure(p, filename = "test.pdf")
 topptx(p, filename = "test.pptx")
