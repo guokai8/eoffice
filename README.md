@@ -2,7 +2,7 @@
 Export and import graphics and tables to MicroSoft office
 ## Description
 _eoffice_ provide wrap functions to export and import graphics and data.frames in R to MicroSoft office (docx, pptx format)
-
+And _eoffice_ also provide write out figures with lots of different formats, such as pdf, eps, emf, tiff, svg, wmf, png and jpeg. Since people may work on the platform without GUI support, _eoffice_ also provide function to easily write out figures to all above formats, pptx and docx.
 ## Installation
 ```
 library(devtools)
@@ -13,6 +13,7 @@ install_github("guokai8/eoffice")
 
 ```
 library(eoffice)
+library(ggplot2)
 ## make a figure with you custom function
 plot(mtcars$mpg, mtcars$disp)
 topptx(filename = "mtcars.pptx")
@@ -32,6 +33,14 @@ tt <- t.test(wt ~ am, mtcars)
 totable(t.test(tt), filename = "mtcars_test.pptx")
 ## inpptx and indocx provide function read the tables in pptx or docx
 tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
+## output different figure formats
+tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.pdf")
+tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.eps")
+## if you use basic plot function or other plot function you need first use convertplot to convert it to ggplot object
+p <- convertplot(plot(1:10))
+tofigure(p, filename = "test.pdf")
+topptx(p, filename = "test.pptx")
+## if you use ggplot like function you don't need to transform the format
 ```
 ## Note
 The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include lots of fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
