@@ -3,8 +3,8 @@
 ##' @importFrom officer docx_summary
 ##' @importFrom officer pptx_summary
 ##' @importFrom magrittr %>%
-##' @importFrom dplyr select_
 ##' @importFrom dplyr filter_
+##' @importFrom graphics text
 ##' @param filename input filename
 ##' @param format pptx or docx
 ##' @param header use first row as column name
