@@ -8,10 +8,10 @@
 ##' @importFrom rvg body_add_vg
 ##' @importFrom grDevices recordPlot
 ##' @importFrom grDevices dev.cur hcl
-##' @param figure figure function
-##' @param format file type
+##' @param figure plot figure function
+##' @param format file format
 ##' @param filename output filename
-##' @param append append into file
+##' @param append append or not
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @author Kai Guo
@@ -71,27 +71,27 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
 
 ##' export figure to pptx
 ##' @name topptx
-##' @param figure figure function
+##' @param figure plot figure function
 ##' @param filename output filename
 ##' @param width width of the output figure
 ##' @param height height of the output figure
-##' @param append append into file
+##' @param append append or not
 ##' @author Kai Guo
 ##' @export
-topptx <- function(figure = NULL, filename = NULL, append = FALSE, width = 4, height = 4){
+topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append = FALSE){
     toffice(figure = figure, filename = filename, format = "pptx",
             width = width, height = height, append = append)
 }
 ##' export figure to docx
 ##' @name todocx
-##' @param figure figure function
+##' @param figure plot figure function
 ##' @param filename output filename
 ##' @param width width of the output figure
 ##' @param height height of the output figure
-##' @param append append into file
+##' @param append append or not
 ##' @author Kai Guo
 ##' @export
-todocx <- function(figure =NULL, filename = NULL, append = FALSE, width = 4, height = 4){
+todocx <- function(figure =NULL, filename = NULL, width = 6, height = 6, append = FALSE){
     toffice(figure = figure, filename = filename, format = "docx",
             width = width, height = height,append = append,)
 }
