@@ -1,0 +1,95 @@
+---
+title: "An R package for exporting and importing graphics and tables to Microsoft Office"
+author:
+- name: Kai Guo
+  affiliation: 
+  - Biomedical Sciences, University of North Dakota
+date: "`r Sys.Date()`"   
+output:
+  html_document:
+    df_print: paged
+  word_document:
+    toc: yes
+    toc_depth: '6'
+  rmarkdown::html_vignette: default
+  pdf_document:
+    toc: yes
+    toc_depth: 6
+vignette: |
+  \usepackage[utf8]{inputenc}
+  %\VignetteIndexEntry{VennDetail}
+  %\VignetteEngine{knitr::knitr} 
+---
+
+## 1. Introduction
+
+_eoffice_ provide wrap functions to export and import graphics and data.frames in R to __Microsoft Office__ (docx, pptx format). And _eoffice_ also provide write out figures with lots of different formats, such as pdf, eps, emf, tiff, svg, wmf, png and jpeg. Since people may work on the platform without GUI support, _eoffice_ also provide function to easily write out figures to all above formats, pptx and docx. 
+
+## 2. Software Usage
+### 2.1 Installation
+``` {r install,eval = FALSE}
+library(devtools)
+install_github("guokai8/eoffice")
+``` 
+### 2.2 Load package
+```{r load, results = 'hide', message = FALSE}
+library(eoffice)
+library(ggplot2)
+```
+### 2.3 Main Functions
+-- _topptx_ write figures to powerpoint file. 
+
+-- _todocx_ write figures to word file. 
+
+-- _totable_ write data frame or summary results of different model to powerpoint or word files
+
+-- _indocx_ read tables from word file
+
+-- _inpptx_ read tables from powerpoint file
+
+-- _tofigure_ write figures to different output formats.
+
+### 2.4 Quick Tour
+
+```  {r fig2, fig.width = 6, fig.height = 5, fig.align = "center"}
+plot(mtcars$mpg, mtcars$disp, col = factor(mtcars$cyl), pch = 20)
+topptx(filename = "mtcars.pptx")
+## You can also use ggplot 
+ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+topptx(filename = "mtcars.pptx")
+## or todocx(filename = "mtcars.docx")
+p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+topptx(p, filename = "mtcars.pptx", width = 6, height = 4)
+## use above method if you want use topptx with ggplot function in a loop
+## write out table to office
+totable(head(mtcars), filename = "mtcars.docx")
+totable(head(mtcars), filename = "mtcars.pptx")
+## append was supported if you want add figures or tables.
+## Now support direct output of common objects produced by R statistical functions
+tt <- t.test(wt ~ am, mtcars)
+totable(tt, filename = "mtcars_test.pptx")
+totable(t.test(wt ~ am, mtcars), filename = "mtcars_test.pptx")
+## inpptx and indocx provide function read the tables in pptx or docx
+tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
+## output different figure formats
+p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+tofigure(p, filename = "mtcars.pdf")
+tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(), filename = "mtcars.eps")
+## if you use basic plot function or other plot function you need first use convertplot to convert 
+## it to ggplot object when you are working on the platform without GUI
+p <- convertplot(plot(1:10))
+tofigure(p, filename = "test.pdf")
+topptx(p, filename = "test.pptx")
+## if you use ggplot like function you don't need to transform the format
+```   
+```{r remove temp file, echo = FALSE}
+unlink("mtcars*")
+unlink("test*")
+```
+
+## Note
+_eoffice_ mainly depends on _officer_ and _rvg_ package which include lots of fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
+
+## Contact information
+
+For any questions please contact guokai8@gmail.com   

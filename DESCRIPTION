@@ -4,7 +4,12 @@ Title: Export or import graph and tables to MicroSoft office
 Version: 0.1.5
 Author: Kai Guo 
 Maintainer: Kai Guo <guokai8@gmail.com>
-Description: Export or import graph and tables to MicroSoft office
+Description: eoffice provide wrap functions to export and import graphics and
+             data.frames in R to MicroSoft office (docx, pptx format) And eoffice also 
+             provide write out figures with lots of different formats, such as pdf, eps,
+             emf, tiff, svg, wmf, png and jpeg. Since people may work on the platform 
+             without GUI support, eoffice also provide function to easily write out figures
+             to all above formats, pptx and docx.
 License: GPL-2
 Imports: officer, rvg, flextable, broom, dplyr, magrittr, grid, ggplotify, R.devices, devEMF
 Depends: 
