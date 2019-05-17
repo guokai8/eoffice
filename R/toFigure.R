@@ -1,11 +1,12 @@
 ##' output figures to different formats
 ##' @name tofigure
 ##' @importFrom R.devices devEval
+##' @importFrom grDevices dev.off
 ##' @importFrom devEMF emf
 ##' @importFrom grDevices recordPlot
 ##' @param figure output figure function, set NULL output the current figure
-##' @param filename
-##' @param type output format
+##' @param format output format (could be ingored)
+##' @param filename output filename
 ##' @author Kai Guo
 ##' @export
 tofigure <- function(figure, format = NULL, filename= "temp.pdf"){

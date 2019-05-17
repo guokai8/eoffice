@@ -93,6 +93,6 @@ topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append
 ##' @export
 todocx <- function(figure =NULL, filename = NULL, width = 6, height = 6, append = FALSE){
     toffice(figure = figure, filename = filename, format = "docx",
-            width = width, height = height,append = append,)
+            width = width, height = height,append = append)
 }
 

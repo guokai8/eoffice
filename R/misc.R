@@ -1,10 +1,12 @@
 ##' get the suffix name
+##' @param x filename
 .getext <- function(x)
 {
     pos <- regexpr("\\.([[:alnum:]]+)$", x)
     ifelse(pos > -1L, substring(x, pos + 1L), "")
 }
 ##' get the prefix name
+##' @param x filename
 .getfilename <- function(x){
     filename <- basename(x)
     pos <- regexpr("\\.([[:alnum:]]+)$", x)
@@ -25,7 +27,8 @@
 ##' convert basic plot to ggplot object
 ##' @importFrom ggplotify as.grob
 ##' @importFrom ggplotify as.ggplot
-##' @param expr expression formula of basic plot
+##' @importFrom stats formula
+##' @param exp expression formula of basic plot
 ##' @return ggplot object
 ##' @author Kai Guo
 ##' @export
