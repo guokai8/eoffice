@@ -4,19 +4,19 @@
 \alias{todocx}
 \title{export figure to docx}
 \usage{
-todocx(figure = NULL, filename = NULL, append = FALSE, width = 4,
-  height = 4)
+todocx(figure = NULL, filename = NULL, width = 6, height = 6,
+  append = FALSE)
 }
 \arguments{
-\item{figure}{figure function}
+\item{figure}{plot figure function}
 
 \item{filename}{output filename}
-
-\item{append}{append into file}
 
 \item{width}{width of the output figure}
 
 \item{height}{height of the output figure}
+
+\item{append}{append or not}
 }
 \description{
 export figure to docx

@@ -8,13 +8,13 @@ toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
   append = FALSE, width = 4, height = 4)
 }
 \arguments{
-\item{figure}{figure function}
+\item{figure}{plot figure function}
 
-\item{format}{file type}
+\item{format}{file format}
 
 \item{filename}{output filename}
 
-\item{append}{append into file}
+\item{append}{append or not}
 
 \item{width}{width of the output figure}
 
