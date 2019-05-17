@@ -33,6 +33,9 @@ convertplot <- function(exp){
     exp <- substitute(exp)
     p <- as.grob(formula(paste0('~',deparse(exp))))
     p <- as.ggplot(p)
+    if(file.exists("Rplots.pdf")){
+        file.remove("Rplots.pdf")
+    }
     return(p)
 }
 
