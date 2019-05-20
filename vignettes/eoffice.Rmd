@@ -52,8 +52,12 @@ library(ggplot2)
 ### 2.4 Quick Tour
 
 ```  {r fig2, fig.width = 6, fig.height = 5, fig.align = "center"}
+## set tempdir used for the tutorial or you can set the work directory 
+currentwd <- getwd()
+setwd(tempdir())
 plot(mtcars$mpg, mtcars$disp, col = factor(mtcars$cyl), pch = 20)
-topptx(filename = "mtcars.pptx")
+topptx(filename = "mtcars.pptx") 
+## filename accept full path 
 ## You can also use ggplot 
 ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
 topptx(filename = "mtcars.pptx")
@@ -86,7 +90,10 @@ topptx(p, filename = "test.pptx")
 unlink("mtcars*")
 unlink("test*")
 ```
-
+```{r setback}
+## set back to the previous work directory
+setwd(currentwd)
+```
 ## Note
 _eoffice_ mainly depends on _officer_ and _rvg_ package which include lots of fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
 
