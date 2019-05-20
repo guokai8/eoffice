@@ -9,6 +9,9 @@
 ##' @param filename output filename with different format as suffix
 ##' @examples
 ##' \dontrun{
+##' ## set tempdir used for the examples
+##' currentwd <- getwd()
+##' setwd(tempdir())
 ##' p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
 ##' tofigure(p,filename = "mtcars.pdf")
 ##' ## or use ggplot directly
@@ -20,6 +23,8 @@
 ##' p <- convertplot(plot(1:10))
 ##' tofigure(p, filename = "test.pdf")
 ##' topptx(p, filename = "test.pptx")
+##' ## set back to the previous work directory
+##' setwd(currentwd)
 ##' }
 ##' @author Kai Guo
 ##' @export

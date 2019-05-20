@@ -10,8 +10,10 @@
 ##' @param header use first row as column name
 ##' @examples
 ##' \dontrun{
+##' ## use tempdir for the example
+##' path <- tempdir()
 ##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
-##' tabs <- inoffice(filename = "mtcars.pptx", header = TRUE)
+##' tabs <- inoffice(filename = paste(path,"mtcars.pptx",sep="/"), header = TRUE)
 ##' tabs
 ##' }
 ##' @export
@@ -90,9 +92,14 @@ inoffice <- function(filename, format = NULL, header = TRUE){
 ##' @param header use first row as column name
 ##' @examples
 ##' \dontrun{
+##' ## set tempdir used for the examples
+##' currentwd <- getwd()
+##' setwd(tempdir())
 ##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
 ##' tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 ##' tabs
+##' ## set back to the previous work directory
+##' setwd(currentwd)
 ##' }
 ##' @author Kai Guo
 ##' @export
@@ -107,9 +114,14 @@ inpptx <- function(filename, header = FALSE){
 ##' @param header use first row as column name
 ##' @examples
 ##' \dontrun{
+##' ## set tempdir used for the examples
+##' currentwd <- getwd()
+##' setwd(tempdir())
 ##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.docx")
 ##' tabs <- indocx(filename = "mtcars.docx", header = TRUE)
 ##' tabs
+##' ## set back to the previous work directory
+##' setwd(currentwd)
 ##' }
 ##' @author Kai Guo
 ##' @export
