@@ -16,9 +16,14 @@ read table from docx
 }
 \examples{
 \dontrun{
+## set tempdir used for the examples
+currentwd <- getwd()
+setwd(tempdir())
 totable(t.test(wt ~ am, mtcars), filename = "mtcars.docx")
 tabs <- indocx(filename = "mtcars.docx", header = TRUE)
 tabs
+## set back to the previous work directory
+setwd(currentwd)
 }
 }
 \author{

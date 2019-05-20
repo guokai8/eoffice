@@ -23,11 +23,13 @@ export figure to pptx
 }
 \examples{
 \dontrun{
+## use tempdir for the examples
+path <- tempdir()
 plot(mtcars$mpg, mtcars$disp)
-topptx(filename = "mtcars.pptx")
+topptx(filename = paste(path,"mtcars.pptx",sep="/"))
 ## You can also use ggplot
 ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-topptx(filename = "mtcars.pptx")
+topptx(filename = paste(path,"mtcars.pptx",sep="/"))
 }
 }
 \author{

@@ -16,9 +16,14 @@ read table from pptx
 }
 \examples{
 \dontrun{
+## set tempdir used for the examples
+currentwd <- getwd()
+setwd(tempdir())
 totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
 tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 tabs
+## set back to the previous work directory
+setwd(currentwd)
 }
 }
 \author{
