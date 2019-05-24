@@ -17,13 +17,10 @@ inoffice(filename, format = NULL, header = TRUE)
 read tables from ppt and word
 }
 \examples{
-\dontrun{
 ## use tempdir for the example
-path <- tempdir()
-totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
-tabs <- inoffice(filename = paste(path,"mtcars.pptx",sep="/"), header = TRUE)
+totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.pptx"))
+tabs <- inoffice(filename = file.path(tempdir(), "mtcars.pptx"), header = TRUE)
 tabs
-}
 }
 \author{
 Kai Guo

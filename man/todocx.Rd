@@ -22,17 +22,12 @@ todocx(figure = NULL, filename = NULL, width = 6, height = 6,
 export figure to docx
 }
 \examples{
-\dontrun{
-## set tempdir used for the examples
-currentwd <- getwd()
-setwd(tempdir())
+if(interactive()){
 plot(mtcars$mpg, mtcars$disp)
-todocx(filename = "mtcars.docx")
-## You can also use ggplot
+todocx(filename = file.path(tempdir(), "mtcars.docx"))
+## use ggplot2
 ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-todocx(filename = "mtcars.docx", height = 6, width = 4)
-## set back to the previous work directory
-setwd(currentwd)
+todocx(filename = file.path(tempdir(), "mtcars.docx"), height = 6, width = 4)
 }
 }
 \author{

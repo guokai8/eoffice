@@ -22,14 +22,12 @@ topptx(figure = NULL, filename = NULL, width = 6, height = 6,
 export figure to pptx
 }
 \examples{
-\dontrun{
-## use tempdir for the examples
-path <- tempdir()
+if(interactive()){
 plot(mtcars$mpg, mtcars$disp)
-topptx(filename = paste(path,"mtcars.pptx",sep="/"))
-## You can also use ggplot
+topptx(filename = file.path(tempdir(), "mtcars.pptx"))
+## use ggplot2
 ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-topptx(filename = paste(path,"mtcars.pptx",sep="/"))
+topptx(filename = file.path(tempdir(), "mtcars.pptx"))
 }
 }
 \author{

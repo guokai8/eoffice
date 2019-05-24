@@ -24,17 +24,12 @@ toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
 export graph to MS office
 }
 \examples{
-\dontrun{
-## set tempdir used for the examples
-currentwd <- getwd()
-setwd(tempdir())
+if(interactive()){
 plot(mtcars$mpg, mtcars$disp)
-toffice(filename = "mtcars.pptx",format = "pptx)
-## You can also use ggplot
+toffice(filename = file.path(tempdir(), "mtcars.pptx"), format = "pptx")
+## use ggplot2
 ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-toffice(filename = "mtcars.pptx",format = "pptx)
-## set back to the previous work directory
-setwd(currentwd)
+toffice(filename = file.path(tempdir(), "mtcars.pptx"),format = "pptx")
 }
 }
 \author{
