@@ -8,16 +8,14 @@
 ##' @param filename output format (could be ingored)
 ##' @param save save figure or not (default: TRUE)
 ##' @examples
-##' \dontrun{
-##' ##set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
+##' if(interactive()){
+##' require(ggplot2)
 ##' p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-##' tohtml(p,filename = "mtcars.html")
+##' tohtml(p,filename = file.path(tempdir(), "mtcars.html"))
 ##' ## or use ggplot directly
-##' tohtml(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) +
-##' geom_point(), filename = "mtcars.html")
-##' setwd(currentwd)
+##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) +
+##' geom_point()
+##' tohtml(save = FALSE)
 ##' }
 ##' @export
 ##' @author Kai Guo
