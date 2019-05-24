@@ -20,17 +20,10 @@
 ##' @param format pptx or docx
 ##' @param append append into file
 ##' @examples
-##' \dontrun{
-##' ## set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
 ##' tt <- t.test(wt ~ am, mtcars)
-##' totable(tt, filename = "mtcars_test.pptx")
-##' totable(t.test(wt ~ am, mtcars), filename = "mtcars_test.pptx")
-##' totable(head(mtcars), filename = "mtcars_head.docx")
-##' ## set back to the previous work directory
-##' setwd(currentwd)
-##' }
+##' totable(tt, filename = file.path(tempdir(), "mtcars.pptx"))
+##' totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.pptx"))
+##' totable(head(mtcars), filename = file.path(tempdir(), "mtcars.docx"))
 ##' @author Kai Guo
 ##' @export
 totable <- function(data, filename, format = NULL, append = FALSE){

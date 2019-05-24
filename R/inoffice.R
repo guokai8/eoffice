@@ -9,13 +9,10 @@
 ##' @param format pptx or docx
 ##' @param header use first row as column name
 ##' @examples
-##' \dontrun{
 ##' ## use tempdir for the example
-##' path <- tempdir()
-##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
-##' tabs <- inoffice(filename = paste(path,"mtcars.pptx",sep="/"), header = TRUE)
+##' totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.pptx"))
+##' tabs <- inoffice(filename = file.path(tempdir(), "mtcars.pptx"), header = TRUE)
 ##' tabs
-##' }
 ##' @export
 ##' @author Kai Guo
 inoffice <- function(filename, format = NULL, header = TRUE){
@@ -91,16 +88,9 @@ inoffice <- function(filename, format = NULL, header = TRUE){
 ##' @param filename input filename
 ##' @param header use first row as column name
 ##' @examples
-##' \dontrun{
-##' ## set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
-##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.pptx")
-##' tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
+##' totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.pptx"))
+##' tabs <- inpptx(filename = file.path(tempdir(), "mtcars.pptx"), header = TRUE)
 ##' tabs
-##' ## set back to the previous work directory
-##' setwd(currentwd)
-##' }
 ##' @author Kai Guo
 ##' @export
 inpptx <- function(filename, header = FALSE){
@@ -113,16 +103,9 @@ inpptx <- function(filename, header = FALSE){
 ##' @param filename input filename
 ##' @param header use first row as column name
 ##' @examples
-##' \dontrun{
-##' ## set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
-##' totable(t.test(wt ~ am, mtcars), filename = "mtcars.docx")
-##' tabs <- indocx(filename = "mtcars.docx", header = TRUE)
+##' totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.docx"))
+##' tabs <- indocx(filename = file.path(tempdir(), "mtcars.docx"), header = TRUE)
 ##' tabs
-##' ## set back to the previous work directory
-##' setwd(currentwd)
-##' }
 ##' @author Kai Guo
 ##' @export
 indocx <- function(filename, header = FALSE){

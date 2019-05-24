@@ -15,17 +15,12 @@
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @examples
-##' \dontrun{
-##' ## set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
+##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
-##' toffice(filename = "mtcars.pptx",format = "pptx)
-##' ## You can also use ggplot
+##' toffice(filename = file.path(tempdir(), "mtcars.pptx"), format = "pptx")
+##' ## use ggplot2
 ##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-##' toffice(filename = "mtcars.pptx",format = "pptx)
-##' ## set back to the previous work directory
-##' setwd(currentwd)
+##' toffice(filename = file.path(tempdir(), "mtcars.pptx"),format = "pptx")
 ##' }
 ##' @author Kai Guo
 ##' @export
@@ -90,14 +85,12 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
 ##' @param height height of the output figure
 ##' @param append append or not
 ##' @examples
-##' \dontrun{
-##' ## use tempdir for the examples
-##' path <- tempdir()
+##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
-##' topptx(filename = paste(path,"mtcars.pptx",sep="/"))
-##' ## You can also use ggplot
+##' topptx(filename = file.path(tempdir(), "mtcars.pptx"))
+##' ## use ggplot2
 ##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-##' topptx(filename = paste(path,"mtcars.pptx",sep="/"))
+##' topptx(filename = file.path(tempdir(), "mtcars.pptx"))
 ##' }
 ##' @author Kai Guo
 ##' @export
@@ -113,17 +106,12 @@ topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append
 ##' @param height height of the output figure
 ##' @param append append or not
 ##' @examples
-##' \dontrun{
-##' ## set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
+##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
-##' todocx(filename = "mtcars.docx")
-##' ## You can also use ggplot
+##' todocx(filename = file.path(tempdir(), "mtcars.docx"))
+##' ## use ggplot2
 ##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-##' todocx(filename = "mtcars.docx", height = 6, width = 4)
-##' ## set back to the previous work directory
-##' setwd(currentwd)
+##' todocx(filename = file.path(tempdir(), "mtcars.docx"), height = 6, width = 4)
 ##' }
 ##' @author Kai Guo
 ##' @export

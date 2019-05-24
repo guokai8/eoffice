@@ -8,23 +8,19 @@
 ##' @param format output format (could be ingored)
 ##' @param filename output filename with different format as suffix
 ##' @examples
-##' \dontrun{
-##' ## set tempdir used for the examples
-##' currentwd <- getwd()
-##' setwd(tempdir())
+##' require(ggplot2)
 ##' p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
-##' tofigure(p,filename = "mtcars.pdf")
+##' tofigure(p,filename = file.path(tempdir(), "mtcars.pdf"))
 ##' ## or use ggplot directly
 ##' tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) +
-##' geom_point(), filename = "mtcars.eps")
+##' geom_point(), filename = file.path(tempdir(), "mtcars.eps"))
+##' \dontrun{
 ##' ## if you use basic plot function or other plot function you
 ##' ## need first use convertplot to convert it to ggplot object
 ##' ## when you are working on the platform without GUI
 ##' p <- convertplot(plot(1:10))
-##' tofigure(p, filename = "test.pdf")
-##' topptx(p, filename = "test.pptx")
-##' ## set back to the previous work directory
-##' setwd(currentwd)
+##' tofigure(p, filename = file.path(tempdir(), "mtcars.pdf"))
+##' topptx(p, filename = file.path(tempdir(), "mtcars.pptx"))
 ##' }
 ##' @author Kai Guo
 ##' @export
