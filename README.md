@@ -2,7 +2,7 @@
 Export and import graphics and tables to MicroSoft office
 ## Description
 _eoffice_ provide wrap functions to export and import graphics and data.frames in R to MicroSoft office (docx, pptx format)
-And _eoffice_ also provide write out figures with lots of different formats, such as pdf, eps, emf, tiff, svg, wmf, png and jpeg. Since people may work on the platform without GUI support, _eoffice_ also provide function to easily write out figures to all above formats, pptx and docx.
+And _eoffice_ also provide write out figures with lots of different formats, such as pdf, eps, emf, tiff, svg, wmf, png and jpeg. _eoffice_ also support write out or display ggplot2 type figure with plotly. Since people may work on the platform without GUI support, _eoffice_ also provide function to easily write out figures to all above formats, pptx and docx.
 ## Installation
 ```
 library(devtools)
@@ -37,6 +37,8 @@ tabs <- inpptx(filename = "mtcars.pptx", header = TRUE)
 ## output different figure formats
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.pdf")
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(),filename = "mtcars.eps")
+## display figure with plotly
+tohtml(p, save = FALSE)
 ## if you use basic plot function or other plot function you need first use convertplot to convert 
 ## it to ggplot object when you are working on the platform without GUI
 p <- convertplot(plot(1:10))
