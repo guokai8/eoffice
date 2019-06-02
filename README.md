@@ -7,6 +7,8 @@ And _eoffice_ also provide write out figures with lots of different formats, suc
 ```
 library(devtools)
 install_github("guokai8/eoffice")
+## eoffice is available on CRAN
+install.package("eoffice")
 ``` 
 
 ## Software Usage
