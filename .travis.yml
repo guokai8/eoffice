@@ -18,15 +18,10 @@ matrix:
   include:
     - os: linux
       r: release
-    - os: linux
-      r: devel
     - os: windows
       r: release
     - os: osx
       r: release
-
-before_install:
-  - export _R_CHECK_TIMINGS_=0
 
 notifications:
   email:
