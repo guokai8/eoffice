@@ -16,8 +16,6 @@ env:
 
 matrix:
   include:
-    - os: linux
-      r: release
     - os: windows
       r: release
     - os: osx
