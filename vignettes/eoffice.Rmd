@@ -1,5 +1,5 @@
 ---
-title: "An R package for exporting and importing graphics and tables to Microsoft Office"
+title: "An R package for exporting and importing graphics and tables of Microsoft Office"
 author:
 - name: Kai Guo
   affiliation: 
@@ -17,7 +17,7 @@ output:
     toc_depth: 6
 vignette: |
   \usepackage[utf8]{inputenc}
-  %\VignetteIndexEntry{VennDetail}
+  %\VignetteIndexEntry{eoffice}
   %\VignetteEngine{knitr::knitr} 
 ---
 
@@ -28,8 +28,8 @@ _eoffice_ provide wrap functions to export and import graphics and data.frames i
 ## 2. Software Usage
 ### 2.1 Installation
 ``` {r install,eval = FALSE}
-library(devtools)
-install_github("guokai8/eoffice")
+# library(devtools)
+# install_github("guokai8/eoffice")
 ``` 
 ### 2.2 Load package
 ```{r load, results = 'hide', message = FALSE}
@@ -49,8 +49,16 @@ library(ggplot2)
 
 -- _tofigure_ write figures to different output formats.
 
-### 2.4 Quick Tour
+-- _tohtml_ write figures to interactive html file
 
+-- _infigure_ read figures or pdf files into R and extract colors from these files. 
+```{r eval=FALSE}
+ Please install imageMagick to use the _infigure_ function. On Linux you need to install the ImageMagick++ library: on Debian/Ubuntu this is called libmagick++-dev:
+sudo apt-get install libmagick++-dev
+On Fedora or CentOS/RHEL we need ImageMagick-c++-devel:
+sudo yum install ImageMagick-c++-devel
+```
+### 2.4 Quick Tour
 ```  {r fig2, fig.width = 6, fig.height = 5, fig.align = "center"}
 plot(mtcars$mpg, mtcars$disp, col = factor(mtcars$cyl), pch = 20)
 topptx(filename = file.path(tempdir(), "mtcars.pptx")) 
@@ -75,6 +83,8 @@ tabs <- inpptx(filename = file.path(tempdir(), "mtcars.pptx"), header = TRUE)
 p <- ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
 tofigure(p, filename = file.path(tempdir(), "mtcars.pdf"))
 tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point(), filename = file.path(tempdir(), "mtcars.eps"))
+## Not support emf and eps formats 
+infigure(file.path(tempdir(), "mtcars.pdf"),exclude_col = c("white","black")) 
 ## if you use basic plot function or other plot function you need first use convertplot to convert 
 ## it to ggplot object when you are working on the platform without GUI
 ## p <- convertplot(plot(1:10))
