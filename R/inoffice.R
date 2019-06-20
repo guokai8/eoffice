@@ -10,8 +10,8 @@
 ##' @param header use first row as column name
 ##' @examples
 ##' ## use tempdir for the example
-##' totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.pptx"))
-##' tabs <- inoffice(filename = file.path(tempdir(), "mtcars.pptx"), header = TRUE)
+##' totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.docx"))
+##' tabs <- inoffice(filename = file.path(tempdir(), "mtcars.docx"), header = TRUE)
 ##' tabs
 ##' @export
 ##' @author Kai Guo
@@ -78,8 +78,6 @@ inoffice <- function(filename, format = NULL, header = TRUE){
     if(isTRUE(header)){
         res <- lapply(res, function(x).setcolnames(x))
     }
-    cat("Here are the details in the ",filename,":\n")
-    print(tent)
     return(res)
     }
 

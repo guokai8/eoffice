@@ -14,6 +14,8 @@
 ##' @param append append or not
 ##' @param width width of the output figure
 ##' @param height height of the output figure
+##' @param devsize Boolean value show use device size or not (default = FALSE)
+##' @param units the units in which to return the value – inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
@@ -25,7 +27,8 @@
 ##' @author Kai Guo
 ##' @export
 toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
-                    append = FALSE, width = 4, height = 4){
+                    append = FALSE, width = 4, height = 4, devsize = FALSE,
+                    units = "in"){
     format = tolower(format)
     if (format == "ppt" | format == "pptx") {
         format = "ppt"
@@ -44,7 +47,10 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
             p <- figure
         }
     }
-
+    if(isTRUE(devsize)){
+        width = dev.size(units)[1]
+        height = dev.size(units)[2]
+    }
     if(format == "ppt"){
         if(isTRUE(append)){
             if(file.exists(filename)){
@@ -84,6 +90,8 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param append append or not
+##' @param devsize Boolean value show use device size or not (default = FALSE)
+##' @param units the units in which to return the value – inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
@@ -94,9 +102,11 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
 ##' }
 ##' @author Kai Guo
 ##' @export
-topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append = FALSE){
+topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6,
+        append = FALSE, devsize = FALSE, units = "in"){
     toffice(figure = figure, filename = filename, format = "pptx",
-            width = width, height = height, append = append)
+            width = width, height = height, append = append, devsize = devsize,
+            units = units)
 }
 ##' export figure to docx
 ##' @name todocx
@@ -105,6 +115,8 @@ topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param append append or not
+##' @param devsize Boolean value show use device size or not (default = FALSE)
+##' @param units the units in which to return the value – inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
@@ -115,8 +127,10 @@ topptx <- function(figure = NULL, filename = NULL, width = 6, height = 6, append
 ##' }
 ##' @author Kai Guo
 ##' @export
-todocx <- function(figure =NULL, filename = NULL, width = 6, height = 6, append = FALSE){
+todocx <- function(figure =NULL, filename = NULL, width = 6, height = 6,
+                    append = FALSE, devsize = FALSE, units = "in"){
     toffice(figure = figure, filename = filename, format = "docx",
-            width = width, height = height,append = append)
+            width = width, height = height,append = append, devsize = devsize,
+            units = units)
 }
 

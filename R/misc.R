@@ -31,7 +31,7 @@
 ##' @param exp expression formula of basic plot
 ##' @return ggplot object
 ##' @examples
-##' \dontrun{
+##' \donttest{
 ##' p <- convertplot(plot(1:10))
 ##' class(p)
 ##' print(p)
@@ -48,4 +48,14 @@ convertplot <- function(exp){
     return(p)
 }
 
+##' blank theme
+##' @importFrom ggplot2 theme
+##' @importFrom ggplot2 element_blank
+##'
+.theme_blank<-function(){
+    theme(panel.border=element_blank(),panel.grid=element_blank(),
+        panel.background=element_blank(),axis.ticks=element_blank(),
+        axis.text=element_blank(),
+        axis.title=element_blank(),legend.position="none")
+}
 

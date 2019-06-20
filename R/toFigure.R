@@ -14,7 +14,7 @@
 ##' ## or use ggplot directly
 ##' tofigure(ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) +
 ##' geom_point(), filename = file.path(tempdir(), "mtcars.eps"))
-##' \dontrun{
+##' \donttest{
 ##' ## if you use basic plot function or other plot function you
 ##' ## need first use convertplot to convert it to ggplot object
 ##' ## when you are working on the platform without GUI
