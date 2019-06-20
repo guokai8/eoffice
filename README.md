@@ -3,12 +3,13 @@ Export and import graphics and tables to MicroSoft office
 [![](https://cranlogs.r-pkg.org/badges/eoffice)](https://cran.r-project.org/package=eoffice)
 ## Description
 _eoffice_ provide wrap functions to export and import graphics and data.frames in R to MicroSoft office (docx, pptx format)
-And _eoffice_ also provide write out figures with lots of different formats, such as pdf, eps, emf, tiff, svg, wmf, png and jpeg. _eoffice_ also support write out or display ggplot2 type figure with plotly. Since people may work on the platform without GUI support, _eoffice_ also provide function to easily write out figures to all above formats, pptx and docx._eoffice_ is avaiable on CRAN now. _eoffice_ provides function to extract colors from figures with different formats or pdf files. For linux platform please install imageMagick to use the _infigure_ function.      
+And _eoffice_ also provide write out figures with lots of different formats, such as pdf, eps, emf, tiff, svg, wmf, png and jpeg. _eoffice_ also support write out or display ggplot2 type figure with plotly. Since people may work on the platform without GUI support, _eoffice_ also provide function to easily write out figures to all above formats, pptx and docx._eoffice_ is avaiable on CRAN now. _eoffice_ provides function to extract colors from figures with different formats or pdf files. For linux platform please install imageMagick to use the _infigure_ function.       
 
 on Debian/Ubuntu this is called libmagick++-dev:    
 sudo apt-get install libmagick++-dev         
 On Fedora or CentOS/RHEL we need ImageMagick-c++-devel:       
-sudo yum install ImageMagick-c++-devel
+sudo yum install ImageMagick-c++-devel       
+If you can't install the ImageMagick you can go with _eoffice_ 0.1.6 version 
 ## Installation
 ```
 library(devtools)
