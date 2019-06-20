@@ -18,8 +18,8 @@ read tables from ppt and word
 }
 \examples{
 ## use tempdir for the example
-totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.pptx"))
-tabs <- inoffice(filename = file.path(tempdir(), "mtcars.pptx"), header = TRUE)
+totable(t.test(wt ~ am, mtcars), filename = file.path(tempdir(), "mtcars.docx"))
+tabs <- inoffice(filename = file.path(tempdir(), "mtcars.docx"), header = TRUE)
 tabs
 }
 \author{

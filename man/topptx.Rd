@@ -5,7 +5,7 @@
 \title{export figure to pptx}
 \usage{
 topptx(figure = NULL, filename = NULL, width = 6, height = 6,
-  append = FALSE)
+  append = FALSE, devsize = FALSE, units = "in")
 }
 \arguments{
 \item{figure}{plot figure function}
@@ -17,6 +17,10 @@ topptx(figure = NULL, filename = NULL, width = 6, height = 6,
 \item{height}{height of the output figure}
 
 \item{append}{append or not}
+
+\item{devsize}{Boolean value show use device size or not (default = FALSE)}
+
+\item{units}{the units in which to return the value – inches, cm, or pixels (device units)}
 }
 \description{
 export figure to pptx

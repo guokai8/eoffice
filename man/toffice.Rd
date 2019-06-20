@@ -5,7 +5,8 @@
 \title{export graph to MS office}
 \usage{
 toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
-  append = FALSE, width = 4, height = 4)
+  append = FALSE, width = 4, height = 4, devsize = FALSE,
+  units = "in")
 }
 \arguments{
 \item{figure}{plot figure function}
@@ -19,6 +20,10 @@ toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
 \item{width}{width of the output figure}
 
 \item{height}{height of the output figure}
+
+\item{devsize}{Boolean value show use device size or not (default = FALSE)}
+
+\item{units}{the units in which to return the value – inches, cm, or pixels (device units)}
 }
 \description{
 export graph to MS office
