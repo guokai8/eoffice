@@ -18,8 +18,7 @@ matrix:
     - dist: xenial
     - os: osx
       brew_packages: imagemagick
-      poppler
-      
+      poppler 
     - os: osx
       brew_packages: imagemagick@6
       poppler
