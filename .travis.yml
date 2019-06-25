@@ -19,7 +19,7 @@ matrix:
     - os: osx
       r: release
       brew_packages:
-      -imagemagick
+        -imagemagick
       
 
 notifications:
