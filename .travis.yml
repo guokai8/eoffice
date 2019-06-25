@@ -19,6 +19,7 @@ matrix:
     - os: osx
       brew_packages: imagemagick
       poppler
+      
     - os: osx
       brew_packages: imagemagick@6
       poppler
