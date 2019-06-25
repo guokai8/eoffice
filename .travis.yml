@@ -12,17 +12,14 @@ warnings_are_errors: false
 r_check_args: --as-cran
 latex: false
 
-before_install:
-brew_packages:
- -imagemagick
-
-
 matrix:
   include:
     - os: windows
       r: release
     - os: osx
       r: release
+      brew_packages:
+      -imagemagick
       
 
 notifications:
