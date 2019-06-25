@@ -18,19 +18,20 @@ matrix:
     - dist: xenial
     - os: osx
       brew_packages: imagemagick
+      poppler
     - os: osx
       brew_packages: imagemagick@6
-    - os: osx
-      osx_image: xcode7.3
-      disable_homebrew: true
-      before_install: sed -i.bak 's/-isysroot /-I/g' $(R RHOME)/etc/Makeconf
+      poppler
     - dist: trusty
       r_check_args: '--ignore-vignettes'
       r_build_args: '--no-build-vignettes'
       addons:
         apt:
           update: true
+          sources:
+            - sourceline: 'ppa:cran/poppler'
           packages:
+            - poppler-data
             - libmagick++-dev
             - librsvg2-dev
             - libwebp-dev
@@ -49,6 +50,7 @@ addons:
     sources:
       - sourceline: 'ppa:cran/imagemagick'
     packages:
+      - poppler-data
       - libmagick++-dev
       - librsvg2-dev
       - libwebp-dev
