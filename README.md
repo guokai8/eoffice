@@ -64,7 +64,7 @@ For any questions please contact guokai8@gmail.com
 
 ## Software status
 
-| Resource:     | CRAN        | Travis CI       | AppVeyor         |
-| ------------- | ------------------- | --------------- | ---------------- |
-| _Platforms:_  | _Multiple_          | _Linux & macOS_ | _Windows_        |
+| Resource:     | CRAN        | Travis CI       
+| ------------- | ------------------- | --------------- |
+| _Platforms:_  | _Multiple_          | _Linux & macOS_ |
 | R CMD check   | <a href="https://cran.r-project.org/web/checks/check_results_eoffice.html"><img border="0" src="http://www.r-pkg.org/badges/version/eoffice" alt="CRAN version"></a> | <a href="https://travis-ci.org/guokai8/eoffice"><img src="https://travis-ci.org/guokai8/eoffice.svg" alt="Build status"></a>   | 
