@@ -16,7 +16,7 @@ ggplot object
 convert basic plot to ggplot object
 }
 \examples{
-\dontrun{
+\donttest{
 p <- convertplot(plot(1:10))
 class(p)
 print(p)

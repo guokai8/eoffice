@@ -5,8 +5,8 @@
 \title{export graph to MS office}
 \usage{
 toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
-  append = FALSE, width = 4, height = 4, devsize = FALSE,
-  units = "in")
+  title = "", append = FALSE, width = 4, height = 4,
+  devsize = FALSE, units = "in")
 }
 \arguments{
 \item{figure}{plot figure function}
@@ -14,6 +14,8 @@ toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
 \item{format}{file format}
 
 \item{filename}{output filename}
+
+\item{title}{title for the figure}
 
 \item{append}{append or not}
 
