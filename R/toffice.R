@@ -62,14 +62,14 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
                 doc <- read_pptx(filename)
             }else{
                 doc <- read_pptx()
-                doc <- add_slide(doc,"Title and Content", "Office Theme")
-                print(doc,target=filename)
+                doc <- add_slide(doc, layout = "Title and Content", master = "Office Theme")
+                print(doc, target=filename)
             }
         }else{
             doc <- read_pptx()
         }
-        doc <- add_slide(doc,"Title and Content", "Office Theme")
-        doc <- ph_with(doc, value = title, ph_location_type(type = "title"))
+        doc <- add_slide(doc,layout = "Title and Content", master = "Office Theme")
+        doc <- ph_with(doc, value = title, location = ph_location_type(type = "title"))
         doc <- ph_with_vg(doc, print(p), width = width, height = height)
         print(doc,target=filename)
     }
@@ -112,7 +112,7 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
 ##' @export
 topptx <- function(figure = NULL, filename = NULL, title = "", width = 6, height = 6,
         append = FALSE, devsize = FALSE, units = "in"){
-    toffice(figure = figure, filename = filename, format = "pptx",
+    toffice(figure = figure, filename = filename, format = "pptx", title = title,
             width = width, height = height, append = append, devsize = devsize,
             units = units)
 }
@@ -138,7 +138,7 @@ topptx <- function(figure = NULL, filename = NULL, title = "", width = 6, height
 ##' @export
 todocx <- function(figure =NULL, filename = NULL, title = "", width = 6, height = 6,
                     append = FALSE, devsize = FALSE, units = "in"){
-    toffice(figure = figure, filename = filename, format = "docx",
+    toffice(figure = figure, filename = filename, format = "docx", title = title,
             width = width, height = height,append = append, devsize = devsize,
             units = units)
 }
