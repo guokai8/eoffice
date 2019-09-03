@@ -58,7 +58,7 @@ topptx(p, filename = "test.pptx")
 ## if you use ggplot like function you don't need to transform the format
 ```
 ## Note
-The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include lots of fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some other packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics functions will be available soon.
+The _eoffice_ just a package for funs. _eoffice_ depends on _officer_ and _rvg_ package which include lots of fantastic functions. Here, _eoffice_ provides simplified functions which could be save some time to learn the complete functions from above packages. And there are some other packages provide these functions. Comparing with these packages, _eoffice_ include own features which I think really helpful to me.  Besides, _eoffice_ also provide functions to read tables from pptx and docx. Read graphics and extract colors from the figures are available now.
 
 ## Contact information
 
