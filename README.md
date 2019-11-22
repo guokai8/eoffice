@@ -17,7 +17,7 @@ If you can't install the ImageMagick you can go with _eoffice_ 0.1.6 version
 library(devtools)
 install_github("guokai8/eoffice")
 ## eoffice is available on CRAN
-install.package("eoffice")
+install.packages("eoffice")
 ``` 
 
 ## Software Usage
