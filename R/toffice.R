@@ -3,11 +3,10 @@
 ##' @importFrom officer read_docx
 ##' @importFrom officer read_pptx
 ##' @importFrom magrittr %>%
-##' @importFrom officer ph_with
+##' @importFrom officer add_slide ph_with ph_location
 ##' @importFrom officer ph_location_type
-##' @importFrom officer add_slide
 ##' @importFrom officer body_add_par
-##' @importFrom rvg ph_with_vg
+##' @importFrom rvg dml
 ##' @importFrom rvg body_add_vg
 ##' @importFrom grDevices recordPlot
 ##' @importFrom grDevices dev.cur hcl
@@ -70,7 +69,7 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
         }
         doc <- add_slide(doc,layout = "Title and Content", master = "Office Theme")
         doc <- ph_with(doc, value = title, location = ph_location_type(type = "title"))
-        doc <- ph_with_vg(doc, print(p), width = width, height = height)
+        doc <- ph_with(doc, dml(code = print(p)), location = ph_location(width = width, height = height))
         print(doc,target=filename)
     }
     if(format == "doc"){
