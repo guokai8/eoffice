@@ -2,12 +2,14 @@
 ##' @name toffice
 ##' @importFrom officer read_docx
 ##' @importFrom officer read_pptx
+##' @importFrom officer read_xlsx
 ##' @importFrom magrittr %>%
 ##' @importFrom officer add_slide ph_with ph_location
 ##' @importFrom officer ph_location_type
 ##' @importFrom officer body_add_par
 ##' @importFrom rvg dml
 ##' @importFrom rvg body_add_vg
+##' @importFrom rvg xl_add_vg
 ##' @importFrom grDevices recordPlot
 ##' @importFrom grDevices dev.cur hcl
 ##' @param figure plot figure function
@@ -39,6 +41,9 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
     }
     if (format == "doc" | format == "docx") {
         format = "doc"
+    }
+    if (format == "xls" | format == "xlsx"){
+        format = "xls"
     }
     if(is.null(figure)){
         if (dev.cur() == 1)
@@ -85,7 +90,15 @@ toffice <- function(figure = NULL, format = "pptx", filename= "temp.pptx",
         }
         doc <- body_add_par(doc, value = title, style = "Normal" )
         doc <- body_add_vg(doc, print(p), width = width, height = height)
-        print(doc,target=filename)
+        print(doc, target = filename)
+    }
+    if(format == "xls"){
+        doc <- read_xlsx()
+        if(title == ""){
+            title = "Feuil1"
+        }
+        doc <- xl_add_vg(doc, sheet = title, code = print(p), width = width, height = height, left=1, top=1)
+        print(doc, target = filename)
     }
 }
 
@@ -142,3 +155,27 @@ todocx <- function(figure =NULL, filename = NULL, title = "", width = 6, height 
             units = units)
 }
 
+##' export figure to pptx
+##' @name toxlsx
+##' @param figure plot figure function
+##' @param filename output filename
+##' @param width width of the output figure
+##' @param height height of the output figure
+##' @param devsize Boolean value show use device size or not (default = FALSE)
+##' @param units the units in which to return the value – inches, cm, or pixels (device units)
+##' @examples
+##' if(interactive()){
+##' plot(mtcars$mpg, mtcars$disp)
+##' toxlsx(filename = file.path(tempdir(), "mtcars.xlsx"))
+##' ## use ggplot2
+##' ggplot(mtcars, aes(mpg, disp, color = factor(cyl))) + geom_point()
+##' toxlsx(filename = file.path(tempdir(), "mtcars.xlsx"))
+##' }
+##' @author Kai Guo
+##' @export
+toxlsx <- function(figure = NULL, filename = NULL, title = "", width = 6, height = 6,
+                   devsize = FALSE, units = "in"){
+    toffice(figure = figure, filename = filename, format = "xlsx",
+            width = width, height = height,  devsize = devsize,
+            units = units)
+}
