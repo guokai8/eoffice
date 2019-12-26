@@ -3,7 +3,7 @@
 <a href="https://cran.r-project.org/web/checks/check_results_eoffice.html"><img border="0" src="http://www.r-pkg.org/badges/version/eoffice" alt="CRAN version"></a>
 <a href="https://travis-ci.org/guokai8/eoffice"><img src="https://travis-ci.org/guokai8/eoffice.svg" alt="Build status"></a> 
 [![Project Status:](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![](https://img.shields.io/badge/devel%20version-1.1.2-green.svg)](https://github.com/guokai8/eoffice)
+[![](https://img.shields.io/badge/devel%20version-0.1.9-green.svg)](https://github.com/guokai8/eoffice)
 
 Export and import graphics and tables to MicroSoft office
 
