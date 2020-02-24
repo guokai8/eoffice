@@ -1,7 +1,7 @@
 ##' write table out to pptx or docx
 ##' @importFrom officer add_slide
+##' @importFrom officer ph_with
 ##' @importFrom flextable flextable
-##' @importFrom flextable ph_with_flextable
 ##' @importFrom flextable theme_booktabs
 ##' @importFrom flextable body_add_flextable
 ##' @importFrom flextable autofit
@@ -65,7 +65,7 @@ totable <- function(data, filename, format = NULL, append = FALSE){
             doc <- read_pptx()
         }
         doc <- add_slide(doc, "Title and Content", "Office Theme")
-        doc <- ph_with_flextable(doc, ft)
+        doc <- ph_with(doc, ft, location = ph_location_type(type = "body"))
         print(doc,target=filename)
     }
     if(format == "doc"){
