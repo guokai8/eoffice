@@ -173,9 +173,9 @@ todocx <- function(figure =NULL, filename = NULL, title = "", width = 6, height 
 ##' }
 ##' @author Kai Guo
 ##' @export
-toxlsx <- function(figure = NULL, filename = NULL, title = "", width = 6, height = 6,
+toxlsx <- function(figure = NULL, filename = NULL, width = 6, height = 6,
                    devsize = FALSE, units = "in"){
-    toffice(figure = figure, filename = filename, format = "xlsx",
+    toffice(figure = figure, filename = filename, format = "xlsx", title = "",
             width = width, height = height,  devsize = devsize,
             units = units)
 }
