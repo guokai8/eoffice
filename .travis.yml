@@ -26,12 +26,6 @@ matrix:
       brew_packages: 
       - imagemagick
       - poppler 
-    - os: osx
-      r_check_args: '--ignore-vignettes'
-      r_build_args: '--no-build-vignettes'
-      brew_packages: 
-      - imagemagick@6
-      - poppler
     - dist: trusty
       r_check_args: '--ignore-vignettes'
       r_build_args: '--no-build-vignettes'
