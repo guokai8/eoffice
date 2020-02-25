@@ -14,12 +14,6 @@ latex: false
 
 matrix:
   include:
-    - dist: trusty
-      r_check_args: '--ignore-vignettes'
-      r_build_args: '--no-build-vignettes'
-    - dist: xenial
-      r_check_args: '--ignore-vignettes'
-      r_build_args: '--no-build-vignettes'
     - os: osx
       r_check_args: '--ignore-vignettes'
       r_build_args: '--no-build-vignettes'
