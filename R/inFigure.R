@@ -5,7 +5,6 @@
 ##' @importFrom magick image_raster
 ##' @importFrom magick image_write
 ##' @importFrom magick image_ggplot
-##' @importFrom gplots col2hex
 ##' @importFrom ggplot2 geom_bar
 ##' @importFrom ggplot2 geom_text
 ##' @importFrom ggplot2 ggplot
