@@ -4,8 +4,23 @@
 \alias{topptx}
 \title{export figure to pptx}
 \usage{
-topptx(figure = NULL, filename = NULL, title = "", width = 6,
-  height = 6, append = FALSE, devsize = FALSE, units = "in")
+topptx(
+  figure = NULL,
+  filename = NULL,
+  nrow = 1,
+  ncol = 1,
+  irow = 1,
+  icol = 1,
+  onsame = FALSE,
+  title = "",
+  left = 0.1,
+  top = 0.1,
+  width = 6,
+  height = 6,
+  append = FALSE,
+  devsize = FALSE,
+  units = "in"
+)
 }
 \arguments{
 \item{figure}{plot figure function}

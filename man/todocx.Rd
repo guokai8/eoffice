@@ -4,8 +4,16 @@
 \alias{todocx}
 \title{export figure to docx}
 \usage{
-todocx(figure = NULL, filename = NULL, title = "", width = 6,
-  height = 6, append = FALSE, devsize = FALSE, units = "in")
+todocx(
+  figure = NULL,
+  filename = NULL,
+  title = "",
+  width = 6,
+  height = 6,
+  append = FALSE,
+  devsize = FALSE,
+  units = "in"
+)
 }
 \arguments{
 \item{figure}{plot figure function}

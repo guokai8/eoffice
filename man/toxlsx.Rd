@@ -7,7 +7,6 @@
 toxlsx(
   figure = NULL,
   filename = NULL,
-  title = "",
   width = 6,
   height = 6,
   devsize = FALSE,

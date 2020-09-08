@@ -4,9 +4,24 @@
 \alias{toffice}
 \title{export graph to MS office}
 \usage{
-toffice(figure = NULL, format = "pptx", filename = "temp.pptx",
-  title = "", append = FALSE, width = 4, height = 4,
-  devsize = FALSE, units = "in")
+toffice(
+  figure = NULL,
+  format = "pptx",
+  filename = "temp.pptx",
+  nrow = 1,
+  ncol = 1,
+  irow = 1,
+  icol = 1,
+  onsame = FALSE,
+  title = "",
+  left = 0.1,
+  top = 0.1,
+  append = FALSE,
+  width = 4,
+  height = 4,
+  devsize = FALSE,
+  units = "in"
+)
 }
 \arguments{
 \item{figure}{plot figure function}

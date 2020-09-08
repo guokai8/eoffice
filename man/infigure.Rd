@@ -4,9 +4,17 @@
 \alias{infigure}
 \title{import figures and extract the colors used in the figures}
 \usage{
-infigure(filename, format = NULL, exclude_col = NULL, topn = 10,
-  showfig = FALSE, showcol = FALSE, savegg = FALSE, density = 300,
-  pages = NULL)
+infigure(
+  filename,
+  format = NULL,
+  exclude_col = NULL,
+  topn = 10,
+  showfig = FALSE,
+  showcol = FALSE,
+  savegg = FALSE,
+  density = 300,
+  pages = NULL
+)
 }
 \arguments{
 \item{filename}{input filename}
