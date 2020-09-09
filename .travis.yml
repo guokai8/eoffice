@@ -20,7 +20,7 @@ matrix:
       brew_packages: 
       - imagemagick@6
       - poppler 
-    - dist: trusty
+    - dist: linux
       r_check_args: '--ignore-vignettes'
       r_build_args: '--no-build-vignettes'
       addons:
