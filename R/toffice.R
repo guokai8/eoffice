@@ -7,12 +7,13 @@
 ##' @importFrom officer add_slide ph_with ph_location
 ##' @importFrom officer ph_location_type
 ##' @importFrom officer body_add_par
+##' @importFrom officer body_add_img
 ##' @importFrom rvg dml
-##' @importFrom rvg body_add_vg
 ##' @importFrom rvg xl_add_vg
 ##' @importFrom grDevices recordPlot
 ##' @importFrom grDevices dev.cur hcl
 ##' @importFrom officer slide_size
+##' @importFrom devEMF emf
 ##' @param figure plot figure function
 ##' @param format file format
 ##' @param filename output filename
@@ -130,8 +131,13 @@ toffice <- function(figure = NULL, format = "pptx",filename= "temp.pptx", nr=1, 
         }else{
             doc <- read_docx()
         }
+        temp.file <- tempfile()
+        temp.file <- paste0(temp.file, ".emf")
+        emf(file = temp.file, height = height, width = width, emfPlus = TRUE)
+        print(p)
+        dev.off()
         doc <- body_add_par(doc, value = title, style = "Normal" )
-        doc <- body_add_vg(doc, print(p), width = width, height = height)
+        doc <- body_add_img(doc, src=temp.file, width = width, height = height)
         print(doc, target = filename)
     }
     if(format == "xls"){
