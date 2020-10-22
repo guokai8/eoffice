@@ -17,6 +17,12 @@
 ##' @param figure plot figure function
 ##' @param format file format
 ##' @param filename output filename
+##' @param nr,nc two numbers to indicate the figures will be drawn in
+##' an nr-by-nc array on the device by columns  or rows, respectively.
+##' @param irow,icol two number to indicate which row or column for the figure to be drawn
+##' @param onsame Boolean value show to draw on same slide or not
+##' @param left,top two numbers which gives the number of lines of margin to be specified
+##' on the left and right sides of the plot
 ##' @param title title for the figure
 ##' @param append append or not
 ##' @param width width of the output figure
@@ -33,7 +39,8 @@
 ##' }
 ##' @author Kai Guo
 ##' @export
-toffice <- function(figure = NULL, format = "pptx",filename= "temp.pptx", nr=1, nc=1, irow=1,icol=1, onsame=FALSE,
+toffice <- function(figure = NULL, format = "pptx",filename= "temp.pptx", nr=1, nc=1,
+                    irow=1,icol=1, onsame=FALSE,
                     title="",left=0.15,top=0.15,
                     append = FALSE, width = 4, height = 4, devsize = FALSE,
                     units = "in"){
@@ -154,7 +161,13 @@ toffice <- function(figure = NULL, format = "pptx",filename= "temp.pptx", nr=1, 
 ##' @name topptx
 ##' @param figure plot figure function
 ##' @param filename output filename
+##' @param nr,nc two numbers to indicate the figures will be drawn in
+##' an nr-by-nc array on the device by columns  or rows, respectively.
+##' @param irow,icol the number to indicate which row or column for the figure to be drawn
+##' @param onsame Boolean value show to draw on same slide or not
 ##' @param title title for the figure
+##' @param left,top two numbers which gives the number of lines of margin to be specified
+##' on the left and right sides of the plot
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param append append or not
@@ -170,7 +183,8 @@ toffice <- function(figure = NULL, format = "pptx",filename= "temp.pptx", nr=1, 
 ##' }
 ##' @author Kai Guo
 ##' @export
-topptx <- function(figure = NULL, filename = NULL,nr=1, nc=1, irow=1,icol=1, onsame=FALSE, title = "",left=0.15,top=0.15, width = 6, height = 6,
+topptx <- function(figure = NULL, filename = NULL,nr=1, nc=1, irow=1,icol=1, onsame=FALSE, title = "",
+                   left=0.15,top=0.15, width = 6, height = 6,
         append = FALSE, devsize = FALSE, units = "in"){
     toffice(figure = figure, filename = filename, format = "pptx", nr=nr, nc=nc, irow=irow,icol=icol, onsame=onsame,title = title,
             left=left,top=top,
