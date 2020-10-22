@@ -7,14 +7,14 @@
 topptx(
   figure = NULL,
   filename = NULL,
-  nrow = 1,
-  ncol = 1,
+  nr = 1,
+  nc = 1,
   irow = 1,
   icol = 1,
   onsame = FALSE,
   title = "",
-  left = 0.1,
-  top = 0.1,
+  left = 0.15,
+  top = 0.15,
   width = 6,
   height = 6,
   append = FALSE,
@@ -27,7 +27,17 @@ topptx(
 
 \item{filename}{output filename}
 
+\item{nr, nc}{two numbers to indicate the figures will be drawn in
+an nr-by-nc array on the device by columns  or rows, respectively.}
+
+\item{irow, icol}{the number to indicate which row or column for the figure to be drawn}
+
+\item{onsame}{Boolean value show to draw on same slide or not}
+
 \item{title}{title for the figure}
+
+\item{left, top}{two numbers which gives the number of lines of margin to be specified
+on the left and right sides of the plot}
 
 \item{width}{width of the output figure}
 
