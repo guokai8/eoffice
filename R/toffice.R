@@ -28,7 +28,7 @@
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param devsize Boolean value show use device size or not (default = FALSE)
-##' @param units the units in which to return the value – inches, cm, or pixels (device units)
+##' @param units the units in which to return the value: inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
@@ -172,7 +172,7 @@ toffice <- function(figure = NULL, format = "pptx",filename= "temp.pptx", nr=1, 
 ##' @param height height of the output figure
 ##' @param append append or not
 ##' @param devsize Boolean value show use device size or not (default = FALSE)
-##' @param units the units in which to return the value – inches, cm, or pixels (device units)
+##' @param units the units in which to return the value: inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
@@ -200,7 +200,7 @@ topptx <- function(figure = NULL, filename = NULL,nr=1, nc=1, irow=1,icol=1, ons
 ##' @param height height of the output figure
 ##' @param append append or not
 ##' @param devsize Boolean value show use device size or not (default = FALSE)
-##' @param units the units in which to return the value – inches, cm, or pixels (device units)
+##' @param units the units in which to return the value: inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
@@ -225,7 +225,7 @@ todocx <- function(figure =NULL, filename = NULL, title = "", width = 6, height 
 ##' @param width width of the output figure
 ##' @param height height of the output figure
 ##' @param devsize Boolean value show use device size or not (default = FALSE)
-##' @param units the units in which to return the value – inches, cm, or pixels (device units)
+##' @param units the units in which to return the value: inches, cm, or pixels (device units)
 ##' @examples
 ##' if(interactive()){
 ##' plot(mtcars$mpg, mtcars$disp)
