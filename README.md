@@ -1,7 +1,7 @@
 # eoffice  
 [![](https://cranlogs.r-pkg.org/badges/eoffice)](https://cran.r-project.org/package=eoffice)
 <a href="https://cran.r-project.org/web/checks/check_results_eoffice.html"><img border="0" src="http://www.r-pkg.org/badges/version/eoffice" alt="CRAN version"></a>![](http://cranlogs.r-pkg.org/badges/grand-total/eoffice?color=green)
-<a href="https://travis-ci.org/guokai8/eoffice"><img src="https://travis-ci.org/guokai8/eoffice.svg" alt="Build status"></a> 
+[![DOI](https://zenodo.org/badge/184794096.svg)](https://zenodo.org/badge/latestdoi/184794096)
 [![Project Status:](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![](https://img.shields.io/badge/devel%20version-0.2.2-green.svg)](https://github.com/guokai8/eoffice)
 
