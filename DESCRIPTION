@@ -1,39 +1,29 @@
-Package: microbial
-Type: Package  
-Title: Do 16s Data Analysis and Generate Figures
-Version: 0.0.22
-Authors@R: c(person("Kai","Guo",email = "guokai8@gmail.com",
-           role = c("aut", "cre")
-          ),
-          person("Pan","Gao",role = "aut"))
-Description: Provides functions to enhance the available 
-            statistical analysis procedures in R by providing simple functions to 
-            analysis and visualize the 16S rRNA data.Here we present a tutorial 
-            with minimum working examples to demonstrate usage and dependencies. 
-License: GPL-3
-Depends: R (>= 3.5.0)
-Imports:
-    dplyr,
-    plyr,
-    magrittr,
-    broom,
-    phyloseq,
-    vegan,
-    rlang,
-    ggplot2,
-    ggpubr,
-    DESeq2,
-    SummarizedExperiment,
-    S4Vectors,
-    rstatix,
-    tidyr,
-    phangorn,
-    randomForest,
-    edgeR,
-    testthat
+Package: eoffice
+Type: Package
+Title: Export or Graph and Tables to 'Microsoft' Office and Import
+        Figures and Tables
+Version: 0.2.1
+Authors@R: person("Kai", "Guo", email = "guokai8@gmail.com",
+                  role = c("aut", "cre"))
+Description: Provides wrap functions to export and import graphics and
+             data frames in R to 'microsoft' office. And This package also 
+             provide write out figures with lots of different formats.
+             Since people may work on the platform without GUI support, the package 
+             also provide function to easily write out figures
+             to lots of different type of formats. Now this package provide function 
+             to extract colors from all types of figures and pdf files.
+License: GPL-2
+Imports: officer, rvg, flextable, broom, dplyr, magrittr, ggplotify,
+        R.devices, devEMF, magick, ggplot2, htmlwidgets, plotly
+Depends:
 Encoding: UTF-8
 LazyData: true
-Suggests: markdown,dada2,rmarkdown,knitr,tools,Biostrings, DECIPHER, MASS
+Suggests: knitr, markdown, rmarkdown
 VignetteBuilder: knitr
-biocViews: Software,GraphAndNetwork
 RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2020-11-18 16:14:34 UTC; bioguo
+Author: Kai Guo [aut, cre]
+Maintainer: Kai Guo <guokai8@gmail.com>
+Repository: CRAN
+Date/Publication: 2020-11-18 21:40:02 UTC
