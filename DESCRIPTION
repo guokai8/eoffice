@@ -2,7 +2,7 @@ Package: eoffice
 Type: Package
 Title: Export or Graph and Tables to 'Microsoft' Office and Import
         Figures and Tables
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: person("Kai", "Guo", email = "guokai8@gmail.com",
                   role = c("aut", "cre"))
 Description: Provides wrap functions to export and import graphics and
