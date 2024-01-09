@@ -20,6 +20,8 @@ Encoding: UTF-8
 LazyData: true
 Suggests: knitr, markdown, rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/guokai8/eoffice
+BugReports: https://github.com/guokai8/eoffice/issues
 RoxygenNote: 7.1.1
 NeedsCompilation: no
 Packaged: 2020-11-18 16:14:34 UTC; bioguo
